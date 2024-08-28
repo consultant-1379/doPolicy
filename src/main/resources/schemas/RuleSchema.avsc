@@ -1,0 +1,47 @@
+{
+	"type": "record",
+	"name": "Rule",
+	"namespace": "org.onap.policy.apex.do.rule",
+	"fields": [
+		   {
+			   "name": "eventType",
+			   "type": "string"
+		   },
+		   {
+			   "name": "faultAssetType",
+			   "type": "string"
+		   },
+		   {
+			   "name": "severityEvaluation",
+			   "type": "string"
+		   },		   
+		   {
+			   "name": "severity",
+			   "type": "string"
+		   },
+		   {
+			   "name": "tenantName",
+			   "type": "string"
+		   },
+		   {
+			   "name": "meterName",
+			   "type": "string"
+		   },
+		   {
+			   "name": "primaryAction",
+			   "type": "string"
+		   },
+		   {
+			   "name": "actionCount",
+			   "type": "int"
+		   },
+		   {
+			   "name": "timeLapse",
+			   "type": "int"
+		   },   	   
+		   {
+   			   "name": "alternativeAction",
+			   "type": "string"
+		   }
+	]
+}

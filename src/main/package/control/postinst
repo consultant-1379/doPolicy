@@ -1,0 +1,31 @@
+#! /bin/sh
+#
+# This script is called after package software is installed
+#
+
+echo  "********************postinst****************"
+echo "arguments $*"
+echo  "***********************************************"
+
+# Check for debian abort-remove case which calls postinst, in which we do nothing
+if [ "$1" = "abort-remove" ]
+then
+    exit 0
+fi
+
+# Check if a soft link for latest version of Apex already exists
+if [ -L "/opt/ericsson/apex/apex" ]; then
+	rm /opt/ericsson/apex/apex
+fi
+
+# Add soft link for latest version of Apex
+ln -s `ls /opt/ericsson/apex | grep -i '^apex-*' | sort | tail -1` /opt/ericsson/apex/apex
+
+# Add Apex-specific directories and set ownership as the Apex admin user
+mkdir -p /var/log/ericsson/apex
+chown -R apexuser:apexuser /var/log/ericsson/apex
+
+# Ensure everything has the correct permissions
+find /opt/ericsson -type d -perm 755 
+find /opt/ericsson -type f -perm 644 
+chmod a+x /opt/ericsson/apex/apex/bin/*

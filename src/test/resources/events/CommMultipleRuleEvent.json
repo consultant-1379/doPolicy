@@ -1,0 +1,33 @@
+{
+    "name": "RuleEvent",
+    "nameSpace": "org.onap.policy.apex.do.rule.engine",
+    "version": "0.0.1",
+    "source": "RuleEngine",
+    "target": "APEX",
+    "rule" : [
+        {
+            "eventType": "COMM",
+            "faultAssetType": "Host",
+            "severityEvaluation": "null",
+            "severity": "null",
+            "tenantName": "null",
+            "meterName": "null",
+            "primaryAction": "recreatevms",
+            "actionCount": 0,
+            "timeLapse": 0,
+            "alternativeAction": "null"
+        },
+               {
+            "eventType": "PM",
+            "faultAssetType": "VM",
+            "severityEvaluation": "Greater_Than",
+            "severity": "Major",
+            "tenantName": "CustomerY",
+            "meterName": "cpu_util",
+            "primaryAction": "recreate",
+            "actionCount": 0,
+            "timeLapse": 0,
+            "alternativeAction": "null"
+        }
+    ]
+}

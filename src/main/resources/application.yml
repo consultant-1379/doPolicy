@@ -1,0 +1,7 @@
+server:
+       port: 8080
+app:
+    sd:
+        team : Ericsson Solution Development Team
+        developer : sd developer
+        stub: true

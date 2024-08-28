@@ -1,0 +1,99 @@
+{
+    "engineServiceParameters": {
+        "name": "MyApexDOEngine",
+        "version": "0.0.1",
+        "id": 45,
+        "instanceCount": 4,
+        "deploymentPort": 12345,
+        "policyModelFileName": "C:/dev/do_policy_repo/do-policy/doPolicy/target/ApexDoPolicyModel.json",
+        "engineParameters": {
+            "executorParameters": {
+                "JAVASCRIPT": {
+                    "parameterClassName": "org.onap.policy.apex.plugins.executor.javascript.JavascriptExecutorParameters"
+                    }
+            },
+            "contextParameters": {
+                "parameterClassName": "org.onap.policy.apex.context.parameters.ContextParameters",
+                "schemaParameters": {
+                    "Avro": {
+                        "parameterClassName": "org.onap.policy.apex.plugins.context.schema.avro.AvroSchemaHelperParameters"
+                    }
+                }
+            }
+        }
+    },
+    "eventOutputParameters": {
+        "FirstProducer": {
+            "carrierTechnologyParameters": {
+                "carrierTechnology": "RESTSERVER",
+                "parameterClassName" : "org.onap.policy.apex.plugins.event.carrier.restserver.RestServerCarrierTechnologyParameters"
+            },
+            "eventProtocolParameters": {
+                "eventProtocol": "JSON"
+            },
+            "synchronousMode"    : true,
+            "synchronousPeer"    : "FirstConsumer",
+            "synchronousTimeout" : 500
+        },
+        "SecondProducer": {
+            "carrierTechnologyParameters": {
+                    "carrierTechnology": "KAFKA",
+                    "parameterClassName": "org.onap.policy.apex.plugins.event.carrier.kafka.KafkaCarrierTechnologyParameters",
+                    "parameters": {
+                        "bootstrapServers": "eric-data-message-bus-kf:9092",
+                        "acks": "all",
+                        "retries": 0,
+                        "batchSize": 16384,
+                        "lingerTime": 1,
+                        "bufferMemory": 33554432,
+                        "producerTopic": "Action",
+                        "keySerializer": "org.apache.kafka.common.serialization.StringSerializer",
+                        "valueSerializer": "org.apache.kafka.common.serialization.StringSerializer"
+                    }
+            },
+            "eventProtocolParameters": {
+                "eventProtocol": "JSON"
+            },
+            "eventNameFilter": "Action"
+        }
+    },
+    "eventInputParameters": {
+        "FirstConsumer": {
+            "carrierTechnologyParameters": {
+                "carrierTechnology": "RESTSERVER",
+                "parameterClassName" : "org.onap.policy.apex.plugins.event.carrier.restserver.RestServerCarrierTechnologyParameters",
+                "parameters": {
+                    "standalone" : true, 
+                    "host" : "dopolicy", 
+                    "port" : 12346 
+                }
+            },
+            "eventProtocolParameters": {
+                "eventProtocol": "JSON"
+            },
+            "synchronousMode"    : true, 
+            "synchronousPeer"    : "FirstProducer", 
+            "synchronousTimeout" : 500 
+        },
+        "SecondConsumer": {
+            "carrierTechnologyParameters": {
+                "carrierTechnology": "KAFKA",
+                "parameterClassName": "org.onap.policy.apex.plugins.event.carrier.kafka.KafkaCarrierTechnologyParameters",
+                "parameters": {
+                    "bootstrapServers": "eric-data-message-bus-kf:9092",
+                    "groupId": "doPolicy-group-id",
+                    "enableAutoCommit": true,
+                    "autoCommitTime": 1000,
+                    "sessionTimeout": 300000,
+                    "consumerPollTime": 100,
+                    "consumerTopicList": ["Trigger"],
+                    "keyDeserializer": "org.apache.kafka.common.serialization.StringDeserializer",
+                    "valueDeserializer": "org.apache.kafka.common.serialization.StringDeserializer"
+                }
+            },
+            "eventProtocolParameters": {
+                "eventProtocol": "JSON"
+            }
+        }
+    }
+}

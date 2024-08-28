@@ -1,0 +1,52 @@
+#! /bin/sh
+#
+# This script is called after package software is removed
+#
+
+echo  "********************postrm*******************"
+echo "arguments $*"
+echo  "*********************************************"
+
+# Check for debian upgrade case which calls postrm, in which we do nothing
+if [ "$1" = "upgrade" ]
+then
+    exit 0
+fi
+
+# Check if a soft link for apex exists, if so remove it
+if [ -L "/opt/ericsson/apex/apex" ]; then
+        rm /opt/ericsson/apex/apex
+fi
+
+DIRS_TO_DELETE="
+        /var/log/ericsson/apex
+		/opt/ericsson/apex
+        "
+
+for DIR in $DIRS_TO_DELETE
+do
+    if [ -e $DIR ]
+    then
+        rm -rf $DIR
+        echo Directory $DIR removed
+    fi
+done
+
+if [ -e "/home/apexuser" ]
+then
+    echo "deleting home directory of user apexuser . . ."
+    rm -fr /home/apexuser
+fi
+
+if getent passwd "apexuser" >/dev/null 2>&1
+then
+    echo "deleting user apexuser . . ."
+    userdel apexuser
+fi
+
+if getent group "apexuser" >/dev/null 2>&1
+then
+    echo "deleting group apexuser . . ."
+    groupdel apexuser
+fi
+

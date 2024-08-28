@@ -1,0 +1,28 @@
+{
+    "name": "Trigger",
+    "nameSpace": "org.onap.policy.apex.ecm",
+    "version": "1.0",
+    "source": "CENX",
+    "target": "APEX",
+    "eventTimeStamp": "2018-03-23T21:58:49Z",
+    "eventType": "PM",
+    "faultAssetType": "VM",
+    "faultAssetName": "VM-1682",
+    "faultAssetId": "VM22222",
+    "severity": "major",
+    "probableCause": "356",
+    "additionalText": "alarm details description",
+    "tenantName": "CustomerABC",
+    "subtenantName": "was null",
+    "vdcName": "VDC123",
+    "vdcId": "VDC-2345-114",
+    "threshold": [
+        {
+            "meterName": "cpu_util",
+            "threshold": "60",
+            "meterValue": "74"
+        }
+    ],
+    "affectedObjects": [
+    ]
+}

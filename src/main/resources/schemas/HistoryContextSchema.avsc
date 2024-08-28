@@ -1,0 +1,31 @@
+{
+    "type": "record",
+    "name": "History",
+    "namespace": "org.onap.policy.apex.do.rule",
+    "fields": [
+           {
+               "name": "eventType",
+               "type": "string"
+           },
+           {
+               "name": "faultAssetType",
+               "type": "string"
+           },
+           {
+               "name": "faultAssetName",
+               "type": "string"
+           },
+           {
+               "name": "action",
+               "type": "string"
+           },
+           {
+               "name": "actionTimestamp",
+               "type": "string"
+           },
+           {
+               "name": "arrayActionTimestamps",
+               "type": "string"
+           }
+    ]
+}

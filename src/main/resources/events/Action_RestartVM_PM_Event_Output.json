@@ -1,0 +1,24 @@
+{
+  "name": "Action",
+  "version": "0.0.1",
+  "nameSpace": "org.onap.policy.apex.ecm",
+  "source": "APEX",
+  "target": "ECM",
+  "action": "restart",
+  "actionDateTime": "Wed, 08 Aug 2018 15:03:14 GMT",
+  "additionalText": "alarm details description",
+  "affectedObjects": [
+    {
+      "assetType": "VAPP",
+      "assetName": "VAPP-534",
+      "assetId": "14234-235-3455",
+      "vdcName": "VDC123",
+      "vdcId": "VDC-2345-114"
+    }
+  ],
+  "faultAssetId": "VM4244321245",
+  "faultAssetName": "VM-1682",
+  "faultAssetType": "VM",
+  "vdcId": "VDC-2345-114",
+  "vdcName": "VDC123"
+}

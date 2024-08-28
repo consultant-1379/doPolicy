@@ -1,0 +1,35 @@
+{
+  "name": "Trigger",
+  "nameSpace": "org.onap.policy.apex.ecm",
+  "version": "1.0",
+  "source": "CENX",
+  "target": "APEX",
+  "eventTimeStamp": "2018-03-23T23:58:49Z",
+  "eventType": "COMM",
+  "faultAssetType": "Host",
+  "faultAssetName": "Host-34525",
+  "faultAssetId": "1234-5678-7890-1234",
+  "severity": "null",
+  "probableCause": "null",
+  "additionalText": "null",
+  "tenantName": "null",
+  "subtenantName": "null",
+  "vdcName": "VDC90210",
+  "vdcId": "90210",
+  "threshold": [
+    {
+      "meterName": "null",
+      "threshold": "300",
+      "meterValue": "3"
+    }
+  ],
+  "affectedObjects": [
+    {
+      "assetType": " VM",
+      "assetName": "VM 90210",
+      "assetId": "3234-a453235-34214",
+      "vdcName": "VDC90210",
+      "vdcId": "90210"
+    }
+  ]
+}

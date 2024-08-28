@@ -1,0 +1,69 @@
+{
+    "name": "RuleEvent",
+    "nameSpace": "org.onap.policy.apex.do.rule.engine",
+    "version": "0.0.1",
+    "source": "RuleEngine",
+    "target": "APEX",
+    "rule" : [
+        {
+            "eventType": "PM",
+            "faultAssetType": "VM",
+            "severityEvaluation": "Greater_Than",
+            "severity": "minor",
+            "tenantName": "CustomerABC",
+            "meterName": "cpu_util",
+            "primaryAction": "restart",
+            "actionCount": 1,
+            "timeLapse": 20,
+            "alternativeAction": "recreate"
+        },
+                {
+            "eventType": "PM",
+            "faultAssetType": "VM",
+            "severityEvaluation": "Greater_Than_Equal_to",
+            "severity": "major",
+            "tenantName": "CustomerABC",
+            "meterName": "cpu*",
+            "primaryAction": "restart",
+            "actionCount": 1,
+            "timeLapse": 20,
+            "alternativeAction": "recreate"
+        },
+        {
+            "eventType": "PM",
+            "faultAssetType": "VM",
+            "severityEvaluation": "Greater_Than",
+            "severity": "major",
+            "tenantName": "CustomerX",
+            "meterName": "cpu_util",
+            "primaryAction": "restart",
+            "actionCount": 0,
+            "timeLapse": 0,
+            "alternativeAction": "null"
+        },
+        {
+            "eventType": "PM",
+            "faultAssetType": "VM",
+            "severityEvaluation": "Greater_Than",
+            "severity": "major",
+            "tenantName": "CustomerY",
+            "meterName": "cpu_util",
+            "primaryAction": "recreate",
+            "actionCount": 0,
+            "timeLapse": 0,
+            "alternativeAction": "null"
+        },
+        {
+            "eventType": "COMM",
+            "faultAssetType": "Host",
+            "severityEvaluation": "null",
+            "severity": "null",
+            "tenantName": "null",
+            "meterName": "null",
+            "primaryAction": "recreatevms",
+            "actionCount": 0,
+            "timeLapse": 0,
+            "alternativeAction": "null"
+        }
+    ]
+}

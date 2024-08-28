@@ -1,0 +1,8 @@
+Package: [[install.package.name]]
+Version: [[version]]
+Section: misc
+Priority: optional
+Architecture: all
+Maintainer: Liam Fallon <liam.fallon@ericsson.com>
+Description: Apex Microservice
+Distribution: development

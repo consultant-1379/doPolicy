@@ -1,0 +1,32 @@
+#! /bin/sh
+#
+# This script is called before package software is installed
+#
+
+echo  "********************preinst*******************"
+echo "arguments $*"
+echo  "**********************************************"
+
+# Check if Apex is running
+running_check=`ps -ef | egrep "com.ericsson.apex.service.engine.main.ApexMain" | egrep -v grep`
+if [ ! -z "$running_check" -a "$running_check" != "" ]
+then
+    echo "Apex processes are running, stop Apex prior to package upgrade"
+    exit 1
+fi
+
+if ! getent group "apexuser" >/dev/null 2>&1
+then
+    echo "creating group apexuser . . ."
+    groupadd apexuser
+fi
+
+if ! getent passwd "apexuser" >/dev/null 2>&1
+then
+    echo "creating user apexuser . . ."
+    useradd -g apexuser apexuser
+fi
+
+# Create the Apex user home directory
+mkdir -p /home/apexuser
+chown -R apexuser:apexuser /home/apexuser

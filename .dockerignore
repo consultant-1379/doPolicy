@@ -1,0 +1,5 @@
+*
+!target/*.jar
+!target/*.json
+!./src/main/resources/*
+!./src/main/resources/config/*.json

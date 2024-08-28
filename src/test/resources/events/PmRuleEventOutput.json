@@ -1,0 +1,8 @@
+{
+    "name": "RuleOutEvent",
+    "version": "0.0.1",
+    "nameSpace": "org.onap.policy.apex.do.rule.engine",
+    "source": "APEX",
+    "target": "logfile",
+    "id": "PM-VM-CustomerABC-cpu_util-Greater_Than_Equal_to-major"
+}

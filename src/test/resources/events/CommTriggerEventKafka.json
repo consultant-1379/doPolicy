@@ -1,0 +1,49 @@
+{
+  "name": "Trigger",
+  "nameSpace": "org.onap.policy.apex.ecm",
+  "version": "1.0",
+  "source": "CENX",
+  "target": "APEX",
+  "eventTimeStamp": "2018-03-23T23:58:49Z",
+  "eventType": "COMM",
+  "faultAssetType": "Host",
+  "faultAssetName": "Host-ActionProcessingWithRestServerTest010",
+  "faultAssetId": "1234-5678-7890-1234",
+  "severity": "null",
+  "probableCause": "null",
+  "additionalText": "null",
+  "tenantName": "null",
+  "subtenantName": "null",
+  "vdcName": "VDCActionProcessingWithRestServerTest010",
+  "vdcId": "007",
+  "threshold": [
+    {
+      "meterName": "null",
+      "threshold": "300",
+      "meterValue": "3"
+    }
+  ],
+  "affectedObjects": [
+    {
+      "assetType": " VM",
+      "assetName": "VM ActionProcessingWithRestServerTest010_1",
+      "assetId": "3234-a453235-34215",
+      "vdcName": "VDCActionProcessingWithRestServerTest010",
+      "vdcId": "010"
+    },
+    {
+      "assetType": " VM",
+      "assetName": "VM ActionProcessingWithRestServerTest010_2",
+      "assetId": "3234-a453235-34216",
+      "vdcName": "VDCActionProcessingWithRestServerTest010",
+      "vdcId": "010"
+    },
+    {
+      "assetType": " VM",
+      "assetName": "VM ActionProcessingWithRestServerTest010_3",
+      "assetId": "3234-a453235-34217",
+      "vdcName": "VDCActionProcessingWithRestServerTest010",
+      "vdcId": "010"
+    }
+  ]
+}

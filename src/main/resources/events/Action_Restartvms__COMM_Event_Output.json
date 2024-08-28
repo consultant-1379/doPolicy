@@ -1,0 +1,24 @@
+{
+  "name": "Action",
+  "version": "0.0.1",
+  "nameSpace": "org.onap.policy.apex.ecm",
+  "source": "APEX",
+  "target": "ECM",
+  "action": "recreatevms",
+  "actionDateTime": "Wed, 08 Aug 2018 14:24:02 GMT",
+  "additionalText": "null",
+  "affectedObjects": [
+    {
+      "assetType": " VM",
+      "assetName": "VM 277",
+      "assetId": "3234-a453235-34214",
+      "vdcName": "VDC2",
+      "vdcId": "2-3"
+    }
+  ],
+  "faultAssetId": "1234-5678-7890-1234",
+  "faultAssetName": "Host-34525",
+  "faultAssetType": "Host",
+  "vdcId": "2-3",
+  "vdcName": "VDC2"
+}

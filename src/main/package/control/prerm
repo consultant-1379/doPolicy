@@ -1,0 +1,17 @@
+#! /bin/sh
+#
+# This script is called before package software is removed
+#
+
+echo  "**********************prerm********************"
+echo "arguments $*"
+echo  "***********************************************"
+
+
+# Check if Apex is running
+running_check=`ps -ef | egrep "com.ericsson.apex.service.engine.main.ApexMain" | egrep -v grep`
+if [ ! -z "$running_check" -a "$running_check" != "" ]
+then
+    echo "Apex processes are running, stop Apex prior to package removal"
+    exit 1
+fi

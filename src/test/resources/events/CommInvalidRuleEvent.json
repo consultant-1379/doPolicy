@@ -1,0 +1,20 @@
+{
+    "name": "RuleEvent",
+    "nameSpace": "org.onap.policy.apex.do.rule.engine",
+    "version": "0.0.1",
+    "source": "RuleEngine",
+    "target": "APEX",
+    "rule" : [
+        {
+            "eventType": "COMM",
+            "severityEvaluation": "null",
+            "severity": "null",
+            "tenantName": "null",
+            "meterName": "null",
+            "primaryAction": "recreatevms",
+            "actionCount": 0,
+            "timeLapse": 0,
+            "alternativeAction": "null"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      initContainers:
+      - name: init-waitforkafka
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        command: ["sh", "-c", "for i in $(seq 1 300); do nc eric-data-message-bus-kf 9092 && exit 0 || sleep 10; done; exit 1"]
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        name: {{ .Chart.Name }}
+        command: ["/bin/sh", "-c", "/opt/app/policy/apex-pdp/bin/apexEngine.sh -c /var/ApexConfigClient.json -m /var/ApexDoPolicyModel.json;"]
+        ports:
+        - containerPort: 12346

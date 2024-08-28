@@ -1,0 +1,21 @@
+{
+    "name": "RuleEvent",
+    "nameSpace": "org.onap.policy.apex.do.rule.engine",
+    "version": "0.0.1",
+    "source": "RuleEngine",
+    "target": "APEX",
+    "rule": [
+        {
+            "eventType": "PM",
+            "faultAssetType": "VM",
+            "severityEvaluation": "Greater_Than_Equal_to",
+            "severity": "major",
+            "tenantName": "CustomerABC",
+            "meterName": "cpu_util",
+            "primaryAction": "recreate",
+            "actionCount": 5,
+            "timeLapse": 30,
+            "alternativeAction": "null"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{  
+   "type":"array",
+   "items":{  
+      "type":"record",
+      "name":"affectedObjects",
+      "fields":[  
+         {  
+            "name":"assetType",
+            "type":"string"
+         },
+         {  
+            "name":"assetName",
+            "type":"string"
+         },
+         {  
+            "name":"assetId",
+            "type":"string"
+         },
+         {  
+            "name":"vdcName",
+            "type":"string"
+         },
+         {  
+            "name":"vdcId",
+            "type":"string"
+         }
+      ]
+   },
+   "default":{}
+}

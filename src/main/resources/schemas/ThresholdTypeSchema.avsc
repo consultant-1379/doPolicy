@@ -1,0 +1,13 @@
+{  
+   "type":"array",
+   "items":{  
+      "type":"record",
+      "name":"threshold",
+      "fields":[  
+		   		{ "name" : "meterName",         "type" : "string" },
+            	{ "name" : "threshold",    		"type" : "string" },
+            	{ "name" : "meterValue",        "type" : "string" }
+      ]
+   }
+}
+
